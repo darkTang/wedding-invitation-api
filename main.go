@@ -8,5 +8,8 @@ import (
 func main() {
 	r := gin.Default()
 	controllers.UserController(r)
-	r.Run()
+	err := r.Run()
+	if err != nil {
+		return
+	}
 }

@@ -10,5 +10,6 @@ func UserController(r *gin.Engine) {
 	user := &services.UserController{}
 	{
 		userRouter.GET("queryUserInfo", user.GetAllUsers)
+		userRouter.POST("/collectUserInfo", user.AddUser)
 	}
 }
