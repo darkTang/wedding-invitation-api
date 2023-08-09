@@ -27,18 +27,18 @@ func (*UserController) AddUser(ctx *gin.Context) {
 	var userInfo models.User
 	if err := ctx.ShouldBind(&userInfo); err == nil { // 必须绑定model.User才会生效
 		models.DB.Create(&userInfo)
-		ctx.JSON(http.StatusOK, gin.H{
+		ctx.JSON(http.StatusCreated, gin.H{
 			"code":        0,
 			"success":     true,
 			"description": "",
-			"data": nil,
+			"data":        nil,
 		})
 	} else {
-		ctx.JSON(http.StatusOK, gin.H{
+		ctx.JSON(http.StatusNotFound, gin.H{
 			"code":        1,
 			"success":     false,
 			"description": err.Error(),
-			"data": nil,
+			"data":        nil,
 		})
 	}
 }
