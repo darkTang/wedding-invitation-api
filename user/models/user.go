@@ -1,12 +1,12 @@
 package models
 
 type User struct { // 默认表名为users
-	Id     int    `json:"id"`
+	Id     string `json:"id" gorm:"primaryKey;autoIncrement"`
 	Name   string `json:"name" form:"name"`
-	Number int    `json:"number" form:"number"`
+	Number uint   `json:"number" form:"number"`
 	Mobile string `json:"mobile" form:"mobile"`
 }
 
-func (User) TableName() string {
+func (User) TableName() string { // 可以修改默认的表名
 	return "user"
 }

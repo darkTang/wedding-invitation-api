@@ -9,7 +9,7 @@ func UserController(r *gin.Engine) {
 	userRouter := r.Group("/api")
 	user := &services.UserController{}
 	{
-		userRouter.GET("queryUserInfo", user.GetAllUsers)
+		userRouter.GET("/queryUserInfo", user.GetAllUsers)
 		userRouter.POST("/collectUserInfo", user.AddUser)
 	}
 }
