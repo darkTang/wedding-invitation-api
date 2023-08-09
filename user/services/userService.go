@@ -31,12 +31,14 @@ func (*UserController) AddUser(ctx *gin.Context) {
 			"code":        0,
 			"success":     true,
 			"description": "",
+			"data": nil,
 		})
 	} else {
 		ctx.JSON(http.StatusOK, gin.H{
 			"code":        1,
 			"success":     false,
 			"description": err.Error(),
+			"data": nil,
 		})
 	}
 }
