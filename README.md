@@ -5,8 +5,8 @@
 # 运行项目
 go run main.go
 
-# 编译
-go build main.go
+# 编译成可以在linux运行的二进制文件
+GOOS=linux go build main.go
 ```
 
 ## 更新日志
