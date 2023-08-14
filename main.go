@@ -2,12 +2,12 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
-	"wedding-invitation-api/user/controllers"
+	"wedding-invitation-api/user"
 )
 
 func main() {
 	r := gin.Default()
-	controllers.UserController(r)
+	user.Controller(r)
 	err := r.Run()
 	if err != nil {
 		return
