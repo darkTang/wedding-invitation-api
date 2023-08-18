@@ -36,9 +36,10 @@ func (Service) CreateUser(ctx *gin.Context) {
 			//db.Save(&userInfo)
 		} else {
 			userInfo = entities.User{
-				Name:   userDto.Name,
-				Number: userDto.Number,
-				Mobile: userDto.Mobile,
+				Name:     userDto.Name,
+				Number:   userDto.Number,
+				Mobile:   userDto.Mobile,
+				FromSide: userDto.FromSide,
 			}
 			db.Create(&userInfo)
 		}

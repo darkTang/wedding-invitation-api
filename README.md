@@ -10,6 +10,9 @@ GOOS=linux go build main.go
 ```
 
 ## 更新日志
+### 0.0.3
+- feat：添加表字段from_side
+
 ### 0.0.2
 - feat：添加手机号相同时更新数据
 
