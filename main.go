@@ -8,7 +8,7 @@ import (
 func main() {
 	r := gin.Default()
 	user.Controller(r)
-	err := r.Run()
+	err := r.Run() // 默认8080端口 r.Run(":3000")
 	if err != nil {
 		return
 	}
